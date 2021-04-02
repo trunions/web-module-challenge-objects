@@ -114,10 +114,11 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(arr, i) {
+  return (arr[i].name + " gave the restaurant a " + arr[i].rating + " star review, and their feedback was: " + arr[i].feedback);
 }
-
+ 
+console.log(getReviewByIndex(reviews, 0));
 
   
 
@@ -133,9 +134,11 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(arr) {
+  return `${arr[(arr.length - 1)].name} gave the restaurant a ${arr[(arr.length - 1)].rating} star review, and their feedback was: ${arr[(arr.length - 1)].feedback}`
 } 
+
+console.log(reviews);
 
 
 
@@ -182,9 +185,19 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(arr) {
+  let arrByWords = [];
+  for (let i in arr) {
+    let feedbackLink = arr[i].feedback.split(" ").length;
+    if(feedbackLink > 15){
+      arrByWords.push(arr[i]);
+    }
+
   }
+  return arrByWords
+  }
+
+  console.log(getLongReviews(reviews));
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -205,11 +218,18 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
+function carMaker(odometer) {
+  return{
+    drive: function(distance){
+     odometer += distance;
+     return odometer
+    }
+  }
     
 }
 
+const car1 = carMaker(10);
+console.log(car1.drive(100));
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
