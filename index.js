@@ -89,6 +89,7 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
+reviews.push({name:'Trista', rating: 4.6, feedback:'awesome food and service!'})
 
 
 
@@ -98,7 +99,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
 
 
@@ -154,10 +155,18 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(reviews, i) {
-     return reviews[i].rating
-  }
+ function getReviewByRating(arr,rating) {
+     let arrByRating = [];
+     for (let i in arr) {
+       let roundedRating = Math.floor(arr[i].rating);
+       if (roundedRating === rating) {
+         arrByRating.push(arr[i]);
+       }
+     }
+     return arrByRating
+    }
 
+    console.log(getReviewByRating(reviews, 4));
   
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
