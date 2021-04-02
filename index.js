@@ -15,11 +15,11 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(name,price,catagory){
-    return {name:name, price:price, catagory:catagory}
+function createMenuItem(name,price,category){
+    return {name:name, price:price, category:category}
 }
 
-console.log(createMenuItem('tacos', 8, 'lumch'));
+console.log(createMenuItem('tacos', 8, 'lunch'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
